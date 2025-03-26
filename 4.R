@@ -1,0 +1,12 @@
+x <- c(151,174,144,135,152,135,131,163,194,192)
+y <- c(63,81,36,27,74,36,85,36,86,93)
+relation <- lm(y~x)
+print(relation)
+print(summary(relation))
+a <- data.frame(x = 170)
+result <- predict(relation,a)
+print(result)
+png(file="regression.png")
+plot(y,x,col ="blue", main = "height & width Regression" , 
+     abline(lm(x~y)),cex=1.3,pch=16,xlab="weight in kg",ylab="height in cm")
+dev.off()
